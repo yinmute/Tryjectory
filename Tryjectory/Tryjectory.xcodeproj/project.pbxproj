@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1C854DA725E885A8000B375B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C854DA625E885A8000B375B /* main.cpp */; };
+		1C854DBB25E88A5A000B375B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C854DBA25E88A5A000B375B /* Game.cpp */; };
+		1C854DC025E88CDC000B375B /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C854DBF25E88CDC000B375B /* SDL2_image.framework */; };
+		1C854DC125E88CDC000B375B /* SDL2_image.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C854DBF25E88CDC000B375B /* SDL2_image.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C854DC425E88CF1000B375B /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C854DC325E88CF1000B375B /* SDL2.framework */; };
+		1C854DC525E88CF1000B375B /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C854DC325E88CF1000B375B /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,12 +25,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		1C854DC225E88CDC000B375B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1C854DC125E88CDC000B375B /* SDL2_image.framework in Embed Frameworks */,
+				1C854DC525E88CF1000B375B /* SDL2.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C854DA325E885A8000B375B /* Tryjectory */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tryjectory; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C854DA625E885A8000B375B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1C854DB825E88775000B375B /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		1C854DBA25E88A5A000B375B /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		1C854DBF25E88CDC000B375B /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		1C854DC325E88CF1000B375B /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		1C854DC625E88EA8000B375B /* Tryjectory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tryjectory.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C854DC025E88CDC000B375B /* SDL2_image.framework in Frameworks */,
+				1C854DC425E88CF1000B375B /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +67,7 @@
 			children = (
 				1C854DA525E885A8000B375B /* Tryjectory */,
 				1C854DA425E885A8000B375B /* Products */,
+				1C854DBE25E88CDC000B375B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +82,21 @@
 		1C854DA525E885A8000B375B /* Tryjectory */ = {
 			isa = PBXGroup;
 			children = (
+				1C854DC625E88EA8000B375B /* Tryjectory.entitlements */,
 				1C854DA625E885A8000B375B /* main.cpp */,
 				1C854DB825E88775000B375B /* Game.h */,
+				1C854DBA25E88A5A000B375B /* Game.cpp */,
 			);
 			path = Tryjectory;
+			sourceTree = "<group>";
+		};
+		1C854DBE25E88CDC000B375B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C854DC325E88CF1000B375B /* SDL2.framework */,
+				1C854DBF25E88CDC000B375B /* SDL2_image.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +109,7 @@
 				1C854D9F25E885A8000B375B /* Sources */,
 				1C854DA025E885A8000B375B /* Frameworks */,
 				1C854DA125E885A8000B375B /* CopyFiles */,
+				1C854DC225E88CDC000B375B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -121,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C854DA725E885A8000B375B /* main.cpp in Sources */,
+				1C854DBB25E88A5A000B375B /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +199,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = /LIbrary/Frameworks;
@@ -226,6 +264,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = /LIbrary/Frameworks;
@@ -251,9 +290,14 @@
 		1C854DAB25E885A8000B375B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Tryjectory/Tryjectory.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86M58PX88Z;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -261,9 +305,14 @@
 		1C854DAC25E885A8000B375B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Tryjectory/Tryjectory.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86M58PX88Z;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
