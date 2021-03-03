@@ -13,6 +13,8 @@
 		1C854DC125E88CDC000B375B /* SDL2_image.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C854DBF25E88CDC000B375B /* SDL2_image.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C854DC425E88CF1000B375B /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C854DC325E88CF1000B375B /* SDL2.framework */; };
 		1C854DC525E88CF1000B375B /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C854DC325E88CF1000B375B /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C854DC925E88F97000B375B /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C854DC725E88F97000B375B /* Field.cpp */; };
+		1CE0B59D25F055E400E4DCC1 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0B59B25F055E400E4DCC1 /* Vector.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,10 @@
 		1C854DBF25E88CDC000B375B /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		1C854DC325E88CF1000B375B /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		1C854DC625E88EA8000B375B /* Tryjectory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tryjectory.entitlements; sourceTree = "<group>"; };
+		1C854DC725E88F97000B375B /* Field.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Field.cpp; sourceTree = "<group>"; };
+		1CE0B59B25F055E400E4DCC1 /* Vector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
+		1CE0B59E25F0566B00E4DCC1 /* Vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		1CE0B59F25F0567D00E4DCC1 /* Field.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 				1C854DA625E885A8000B375B /* main.cpp */,
 				1C854DB825E88775000B375B /* Game.h */,
 				1C854DBA25E88A5A000B375B /* Game.cpp */,
+				1C854DC725E88F97000B375B /* Field.cpp */,
+				1CE0B59B25F055E400E4DCC1 /* Vector.cpp */,
+				1CE0B59E25F0566B00E4DCC1 /* Vector.h */,
+				1CE0B59F25F0567D00E4DCC1 /* Field.h */,
 			);
 			path = Tryjectory;
 			sourceTree = "<group>";
@@ -157,6 +167,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C854DA725E885A8000B375B /* main.cpp in Sources */,
+				1C854DC925E88F97000B375B /* Field.cpp in Sources */,
+				1CE0B59D25F055E400E4DCC1 /* Vector.cpp in Sources */,
 				1C854DBB25E88A5A000B375B /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
