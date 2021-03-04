@@ -6,12 +6,6 @@
 //
 // Vector definition
 
-#ifndef Vector_h
-#define Vector_h
-
-
-#endif /* Vector_h */
-
 struct Vector2 {
     float x;
     float y;

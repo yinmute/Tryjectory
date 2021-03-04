@@ -6,15 +6,13 @@
 //
 // Field class
 
-#ifndef Field_h
-#define Field_h
-
-
-#endif /* Field_h */
-
+#pragma once
 #include "Vector.h"
 #include <vector>
-#include "Game.h"
+#include "SDL.h"
+//#include "Game.h"
+
+class Game;
 
 using namespace std;
 
@@ -23,16 +21,13 @@ class Field {
     
 public:
     
-    // Dependency injection to game object
-    Game* gameRef;
-    
-    Field(Game& game);
+    Field(Game* game);
     
     // Initialize the field and randomize values
     void Initialize();
     
-    //
-    void DrawToScreen();
+    // Will draw the field to the screen
+    void DrawToScreen(SDL_Renderer* renderer);
     
     // Getter function for returning vertex coordinates
     vector<Vector2> getVertexCoordinates();
@@ -40,10 +35,10 @@ public:
 private:
   
     // Vertex coordinates for the field
-    vector<Vector2> vertexCoordinates;
+    vector<Vector2> mVertexCoordinates;
     
-
-    
+    // Dependency injection to game object
+    Game* gameRef;
     
 };
 

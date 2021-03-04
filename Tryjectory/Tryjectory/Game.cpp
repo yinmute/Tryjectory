@@ -16,6 +16,7 @@ Game::Game()
 ,mRenderer(nullptr)
 ,mTicksCount(0)
 ,mIsRunning(true)
+,mGameField(this)
 { }
 
 bool Game::Initialize() {
@@ -52,6 +53,8 @@ bool Game::Initialize() {
         SDL_Log("Failed to create renderer: %s ", SDL_GetError);
         return false;
     }
+    
+    mGameField.Initialize();
     
     return true;
 }
@@ -112,6 +115,10 @@ void Game::GenerateOutput() {
                            255);
     // Clear back buffer
     SDL_RenderClear(mRenderer);
+    
+    // Draw field
+    SDL_SetRenderDrawColor(mRenderer, 255, 255, 255, 255);
+    mGameField.DrawToScreen(mRenderer);
     
     // Swap front buffer and back buffer
     SDL_RenderPresent(mRenderer);

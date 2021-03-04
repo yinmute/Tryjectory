@@ -8,7 +8,7 @@
 
 #pragma once
 #include "SDL.h"
-#include <vector>
+#include "Field.h"
 
 
 class Game {
@@ -22,6 +22,10 @@ public:
     void RunLoop();
     // Shut down the game
     void Shutdown();
+    
+    // Game specific objects
+    // Game field
+    Field mGameField;
     
 private:
     // Helper functions for the game loop
