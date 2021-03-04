@@ -6,6 +6,7 @@
 //
 
 #include "Game.h"
+#include <iostream>
 
 using namespace std;
 
@@ -29,15 +30,22 @@ bool Game::Initialize() {
     }
     
     // Create an SDL Window
+    SDL_DisplayMode DM;
+    SDL_GetDesktopDisplayMode(0, &DM);
+    int screenWidth = DM.w;
+    int screenHeight = DM.h;
+    cout << screenWidth << " " << screenHeight << endl;
+    
     mWindow = SDL_CreateWindow(
                            "Tryjectory", // Window title
                            SDL_WINDOWPOS_CENTERED, // Top left x-coordinate of window
                            SDL_WINDOWPOS_CENTERED, // Top left y-coordinate of window
-                           1024, // Width of window
-                           768, // Height of window
-                           0 // Flags (0 for no flags set))
+                           screenWidth, // Width of window
+                           screenHeight, // Height of window
+                           SDL_WINDOW_RESIZABLE // flags
                            );
-
+   
+    
     if (!mWindow) {
         SDL_Log("Failed to create window: %s", SDL_GetError());
         return false;
@@ -54,7 +62,7 @@ bool Game::Initialize() {
         return false;
     }
     
-    mGameField.Initialize();
+    mGameField.Initialize(screenWidth, screenHeight);
     
     return true;
 }

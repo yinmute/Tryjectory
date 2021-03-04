@@ -24,7 +24,7 @@ public:
     Field(Game* game);
     
     // Initialize the field and randomize values
-    void Initialize();
+    void Initialize(int screenWidth, int screenHeight);
     
     // Will draw the field to the screen
     void DrawToScreen(SDL_Renderer* renderer);
