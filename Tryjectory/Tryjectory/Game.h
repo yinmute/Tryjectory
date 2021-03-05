@@ -9,6 +9,7 @@
 #pragma once
 #include "SDL.h"
 #include "Field.h"
+//#include "Ball.h"
 
 
 class Game {
@@ -26,6 +27,7 @@ public:
     // Game specific objects
     // Game field
     Field mGameField;
+    class Ball* mBall;
     
 private:
     // Helper functions for the game loop

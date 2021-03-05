@@ -38,6 +38,9 @@ void Field::Initialize(int screenWidth, int screenHeight) {
     width *= sizeRandomSeed;
     cout << random << endl;
     
+    this->height = height;
+    this->width = width;
+    
     float xStart = (screenWidth - width) / 2;
     float yStart = (screenHeight - height) / 2;
     
@@ -45,7 +48,6 @@ void Field::Initialize(int screenWidth, int screenHeight) {
     mVertexCoordinates.push_back( {xStart + width, yStart} );
     mVertexCoordinates.push_back( {xStart + width, yStart + height} );
     mVertexCoordinates.push_back( {xStart, yStart + height} );
-    
 }
 
 void Field::DrawToScreen(SDL_Renderer* renderer) {
@@ -73,3 +75,10 @@ void Field::DrawToScreen(SDL_Renderer* renderer) {
 }
 
 
+float Field::getHeight() {
+    return height;
+}
+
+float Field::getWidth() {
+    return width;
+}

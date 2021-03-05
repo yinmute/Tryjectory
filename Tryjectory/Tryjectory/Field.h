@@ -32,6 +32,12 @@ public:
     // Getter function for returning vertex coordinates
     vector<Vector2> getVertexCoordinates();
     
+    // Returns Width of the field
+    float getWidth();
+    
+    // Returns Height of the field
+    float getHeight();
+    
 private:
   
     // Vertex coordinates for the field
@@ -39,6 +45,12 @@ private:
     
     // Dependency injection to game object
     Game* gameRef;
+    
+    // Width of the field
+    float width;
+    
+    // Height of the field
+    float height;
     
 };
 

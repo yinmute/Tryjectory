@@ -7,6 +7,7 @@
 
 #include "Game.h"
 #include <iostream>
+#include "Ball.h"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ Game::Game()
 ,mTicksCount(0)
 ,mIsRunning(true)
 ,mGameField(this)
+//,mBall(this)
 { }
 
 bool Game::Initialize() {
@@ -63,6 +65,8 @@ bool Game::Initialize() {
     }
     
     mGameField.Initialize(screenWidth, screenHeight);
+    mBall = new Ball(this);
+    mBall->Initialize();
     
     return true;
 }
@@ -127,6 +131,9 @@ void Game::GenerateOutput() {
     // Draw field
     SDL_SetRenderDrawColor(mRenderer, 255, 255, 255, 255);
     mGameField.DrawToScreen(mRenderer);
+    
+    // Draw ball
+    mBall->DrawToScreen(mRenderer);
     
     // Swap front buffer and back buffer
     SDL_RenderPresent(mRenderer);
