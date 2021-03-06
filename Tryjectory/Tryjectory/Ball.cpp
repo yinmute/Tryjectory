@@ -9,6 +9,8 @@
 #include "Ball.h"
 #include "SDL.h"
 #include "Game.h"
+#include <cmath>
+
 
 int SDL_RenderFillCircle(SDL_Renderer * renderer, int x, int y, int radius);
 
@@ -20,7 +22,7 @@ void Ball::Initialize() {
     coordinates = { 500, 500 };
     float fieldHeight = gameRef->mGameField.getHeight();
     float fieldWidth = gameRef->mGameField.getWidth();
-    radius = 20;
+    radius = 0.04 * sqrt(pow(fieldHeight,2) + pow(fieldWidth, 2));
 }
 
 void Ball::DrawToScreen(SDL_Renderer* renderer) {
