@@ -38,6 +38,9 @@ public:
     // Returns Height of the field
     float getHeight();
     
+    // Returns top line vector
+    vector<Vector2> getTopLineVector();
+    
 private:
   
     // Vertex coordinates for the field
@@ -51,6 +54,11 @@ private:
     
     // Height of the field
     float height;
+    
+    vector<Vector2> topLine;
+    vector<Vector2> bottomLine;
+    vector<Vector2> rightLine;
+    vector<Vector2> leftLine;
     
 };
 

@@ -111,6 +111,8 @@ void Game::UpdateGame() {
         deltaTime = 0.05f;
     }
     
+    mBall->UpdateBall(deltaTime);
+    
     // Update tick counts (for next frame)
     mTicksCount = SDL_GetTicks();
    

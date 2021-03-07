@@ -24,6 +24,9 @@ public:
     // Will draw the field to the screen
     void DrawToScreen(SDL_Renderer* renderer);
     
+    // Function to update ball
+    void UpdateBall(float deltaTime);
+    
     // Getter function for returning coordinates of center of the ball
     Vector2 getCoordinate();
     

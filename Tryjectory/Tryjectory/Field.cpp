@@ -48,6 +48,13 @@ void Field::Initialize(int screenWidth, int screenHeight) {
     mVertexCoordinates.push_back( {xStart + width, yStart} );
     mVertexCoordinates.push_back( {xStart + width, yStart + height} );
     mVertexCoordinates.push_back( {xStart, yStart + height} );
+    
+    topLine.push_back( {xStart, yStart} );
+    topLine.push_back( {xStart + width, yStart} );
+    
+    rightLine.push_back( {xStart + width, yStart} );
+    rightLine.push_back( {xStart + width, yStart + height} );
+        
 }
 
 void Field::DrawToScreen(SDL_Renderer* renderer) {
@@ -81,4 +88,12 @@ float Field::getHeight() {
 
 float Field::getWidth() {
     return width;
+}
+
+vector<Vector2> Field::getTopLineVector() {
+    return topLine;
+}
+
+vector<Vector2> Field::getVertexCoordinates() {
+    return mVertexCoordinates;
 }

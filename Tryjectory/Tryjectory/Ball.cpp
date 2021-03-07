@@ -10,6 +10,10 @@
 #include "SDL.h"
 #include "Game.h"
 #include <cmath>
+#include <iostream>
+#include "Field.h"
+
+using namespace std;
 
 
 int SDL_RenderFillCircle(SDL_Renderer * renderer, int x, int y, int radius);
@@ -23,6 +27,8 @@ void Ball::Initialize() {
     float fieldHeight = gameRef->mGameField.getHeight();
     float fieldWidth = gameRef->mGameField.getWidth();
     radius = 0.04 * sqrt(pow(fieldHeight,2) + pow(fieldWidth, 2));
+    speed.x = 300.0;
+    speed.y = -300.0;
 }
 
 void Ball::DrawToScreen(SDL_Renderer* renderer) {
@@ -30,6 +36,39 @@ void Ball::DrawToScreen(SDL_Renderer* renderer) {
     SDL_RenderFillCircle(renderer, int(coordinates.x), int(coordinates.y), int(radius));
     
 }
+
+void Ball::UpdateBall(float deltaTime) {
+    
+    //cout << coordinates.y + radius << endl;
+    //cout << gameRef->mGameField.getTopLineVector()[0].y;
+    
+    // Check collision with top wall
+    //if ( (coordinates.y - radius) < gameRef->mGameField.getTopLineVector()[0].y ) {
+    if ( (coordinates.y - radius) < gameRef->mGameField.getVertexCoordinates()[0].y ) {
+        speed.y *= -1;
+    }
+    
+    // Check collision with right wall
+    if ( (coordinates.x + radius) > gameRef->mGameField.getVertexCoordinates()[1].x ) {
+        speed.x *= -1;
+    }
+    
+    // Check collision with bottom wall
+    if ( (coordinates.y + radius) > gameRef->mGameField.getVertexCoordinates()[2].y ) {
+        speed.y *= -1;
+    }
+    
+    // Check collision with left wall
+    if ( (coordinates.x - radius) < gameRef->mGameField.getVertexCoordinates()[0].x ) {
+        speed.x *= -1;
+    }
+    
+    // Update coordinates accordingly to passed time
+    coordinates.x += speed.x * deltaTime;
+    coordinates.y += speed.y * deltaTime;
+    
+}
+
 
 // function to render filled circle
 // taken from https://gist.github.com/Gumichan01/332c26f6197a432db91cc4327fcabb1c#file-circle-cpp-L58
