@@ -41,6 +41,9 @@ public:
     // Returns top line vector
     vector<Vector2> getTopLineVector();
     
+    // Generates pockets coordinates based on ball radius
+    void generatePocketCoords(float ballRadius);
+    
 private:
   
     // Vertex coordinates for the field
@@ -59,6 +62,13 @@ private:
     vector<Vector2> bottomLine;
     vector<Vector2> rightLine;
     vector<Vector2> leftLine;
+    
+    Vector2 topLeftPocket;
+    Vector2 topRightPocket;
+    Vector2 bottomRightPocket;
+    Vector2 bottomLeftPocket;
+    
+    bool pocketsGenerated;
     
 };
 

@@ -67,6 +67,7 @@ bool Game::Initialize() {
     mGameField.Initialize(screenWidth, screenHeight);
     mBall = new Ball(this);
     mBall->Initialize();
+    mGameField.generatePocketCoords(mBall->getRadius());
     
     return true;
 }

@@ -36,6 +36,9 @@ public:
     // Getter function for ball's status
     int getStatus();
     
+    // Returns ball's radius
+    float getRadius();
+    
     
 private:
     

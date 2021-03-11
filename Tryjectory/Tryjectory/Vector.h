@@ -12,3 +12,5 @@ struct Vector2 {
     float x;
     float y;
 };
+
+bool twoPointsCompare(float x1, float y1, float x2, float y2, float epsilon);

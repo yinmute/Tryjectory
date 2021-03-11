@@ -20,6 +20,8 @@ Field::Field(Game* game) {
 
 void Field::Initialize(int screenWidth, int screenHeight) {
     
+    pocketsGenerated = false;
+    
     /* initialize random seed: */
     srand (time(NULL));
 
@@ -79,6 +81,13 @@ void Field::DrawToScreen(SDL_Renderer* renderer) {
                        int(mVertexCoordinates[0].x), int(mVertexCoordinates[0].y)
                        );
     
+    if (pocketsGenerated) {
+        SDL_RenderDrawPoint(renderer, int(topLeftPocket.x), int(topLeftPocket.y));
+        SDL_RenderDrawPoint(renderer, int(topRightPocket.x), int(topRightPocket.y));
+        SDL_RenderDrawPoint(renderer, int(bottomRightPocket.x), int(bottomRightPocket.y));
+        SDL_RenderDrawPoint(renderer, int(bottomLeftPocket.x), int(bottomLeftPocket.y));
+    }
+    
 }
 
 
@@ -97,3 +106,13 @@ vector<Vector2> Field::getTopLineVector() {
 vector<Vector2> Field::getVertexCoordinates() {
     return mVertexCoordinates;
 }
+
+void Field::generatePocketCoords(float ballRadius) {
+    topLeftPocket = { mVertexCoordinates[0].x + ballRadius, mVertexCoordinates[0].y + ballRadius };
+    topRightPocket = { mVertexCoordinates[1].x - ballRadius, mVertexCoordinates[1].y + ballRadius };
+    bottomRightPocket = { mVertexCoordinates[2].x - ballRadius, mVertexCoordinates[2].y - ballRadius };
+    bottomLeftPocket = { mVertexCoordinates[3].x + ballRadius, mVertexCoordinates[3].y - ballRadius };
+    
+    pocketsGenerated = true;
+}
+
