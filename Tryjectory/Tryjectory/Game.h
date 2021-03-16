@@ -5,12 +5,9 @@
 //  Created by Nesiolovskiy, Artem on 2/25/21.
 //
 
-
 #pragma once
-#include "SDL.h"
-#include "Field.h"
-//#include "Ball.h"
 
+#include "SDL.h"
 
 class Game {
     
@@ -26,8 +23,10 @@ public:
     
     // Game specific objects
     // Game field
-    Field mGameField;
+    class Field* mGameField;
+    // Game ball
     class Ball* mBall;
+    
     
 private:
     // Helper functions for the game loop

@@ -7,10 +7,9 @@
 // Ball class definition
 
 #pragma once
+
 #include "Vector.h"
 #include "SDL.h"
-
-//class Game;
 
 class Ball {
   

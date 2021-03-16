@@ -7,21 +7,21 @@
 // Field class
 
 #pragma once
-#include "Vector.h"
-#include <vector>
-#include "SDL.h"
-//#include "Game.h"
 
-class Game;
+#include <vector>
+
+#include "Vector.h"
+#include "SDL.h"
+
+//class Game;
 
 using namespace std;
 
 class Field {
     
-    
 public:
     
-    Field(Game* game);
+    Field(class Game* game);
     
     // Initialize the field and randomize values
     void Initialize(int screenWidth, int screenHeight);
@@ -42,7 +42,7 @@ public:
     vector<Vector2> getTopLineVector();
     
     // Generates pockets coordinates based on ball radius
-    void generatePocketCoords(float ballRadius);
+    void generatePocketCoords();
     
 private:
   
@@ -68,6 +68,7 @@ private:
     Vector2 bottomRightPocket;
     Vector2 bottomLeftPocket;
     
+    // Flag indicating that pockets were generated
     bool pocketsGenerated;
     
 };

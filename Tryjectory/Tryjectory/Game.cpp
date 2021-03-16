@@ -5,21 +5,19 @@
 //  Created by Nesiolovskiy, Artem on 2/25/21.
 //
 
-#include "Game.h"
 #include <iostream>
+
+#include "Game.h"
 #include "Ball.h"
+#include "Field.h"
 
 using namespace std;
-
-
 
 Game::Game()
 :mWindow(nullptr)
 ,mRenderer(nullptr)
 ,mTicksCount(0)
 ,mIsRunning(true)
-,mGameField(this)
-//,mBall(this)
 { }
 
 bool Game::Initialize() {
@@ -64,10 +62,11 @@ bool Game::Initialize() {
         return false;
     }
     
-    mGameField.Initialize(screenWidth, screenHeight);
+    mGameField = new Field(this);
+    mGameField->Initialize(screenWidth, screenHeight);
     mBall = new Ball(this);
     mBall->Initialize();
-    mGameField.generatePocketCoords(mBall->getRadius());
+    mGameField->generatePocketCoords();
     
     return true;
 }
@@ -121,7 +120,7 @@ void Game::UpdateGame() {
 }
 
 void Game::GenerateOutput() {
-    // Set draw color to blue
+    // Set draw color to grey
     SDL_SetRenderDrawColor(
                            mRenderer,
                            168,
@@ -132,8 +131,8 @@ void Game::GenerateOutput() {
     SDL_RenderClear(mRenderer);
     
     // Draw field
-    SDL_SetRenderDrawColor(mRenderer, 255, 255, 255, 255);
-    mGameField.DrawToScreen(mRenderer);
+    //SDL_SetRenderDrawColor(mRenderer, 255, 255, 255, 255);
+    mGameField->DrawToScreen(mRenderer);
     
     // Draw ball
     mBall->DrawToScreen(mRenderer);
